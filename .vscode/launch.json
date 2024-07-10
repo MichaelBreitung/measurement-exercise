@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Exercise Google Test Dbg",
+      "type": "cppdbg",
+      "program": "${workspaceRoot}/build/Measurement-Test",
+      "request": "launch",
+      "cwd": "${workspaceRoot}",
+      "MIMode": "gdb"
+    }
+  ]
+}

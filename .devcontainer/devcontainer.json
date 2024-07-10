@@ -1,0 +1,34 @@
+{
+  "name": "mibreit_c_tooling",
+  "dockerComposeFile": "./docker-compose.yml",
+  "service": "mibreit-c-dev",
+  "workspaceFolder": "/home/developer/develop",
+  "containerUser": "developer",
+  "updateRemoteUserUID": true,
+  "mounts": [
+    // Bind the docker socket of the host to the container-internal socket
+    "source=//var/run/docker.sock,target=/var/run/docker.sock,type=bind",
+  ],
+  "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
+  "shutdownAction": "stopCompose",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "asciidoctor.asciidoctor-vscode",
+        "redhat.vscode-yaml",
+        "ms-azuretools.vscode-docker",
+        "eamodio.gitlens",
+        "ms-vscode.cpptools-extension-pack"
+      ],
+      "settings": {
+        "editor.tabSize": 2,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {},
+        "editor.trimAutoWhitespace": true,
+        "typescript.updateImportsOnFileMove.enabled": "always",
+        "javascript.updateImportsOnFileMove.enabled": "always",
+        "terminal.integrated.defaultProfile.windows": "Git Bash",
+      }
+    }
+  }
+}
